@@ -32,25 +32,12 @@
 
 ```bash
 
-npm  install  @miry/bbjs  node-fetch
+npm  install  @miry/bbjs
 
 ```
-
-または、Yarn を使用している場合は次のコマンドを実行します。
-
-  
-
-```bash
-
-yarn  add  @miry/bbjs  node-fetch
-
-```
-
   
 
 使用例
-
-  
 
 以下は、@miry/bbjs を使用して AI にメッセージを送信し、応答を受け取る基本的な例です。
 
@@ -60,13 +47,9 @@ yarn  add  @miry/bbjs  node-fetch
 
 import  AI  from  '@miry/bbjs';
 
-  
-
 async  function  main() {
-
 const  ai = new  AI('blackboxai'); // モデルを指定
 
-  
 
 try {
 
@@ -83,8 +66,6 @@ console.error('エラー:', error);
 }
 
 }
-
-  
 
 main();
 
@@ -158,11 +139,8 @@ constructor(model: string = 'blackboxai')
 try {
 
 const  response = await  ai.sendMessage(conversationId, userMessage);
-
 } catch (error) {
-
 console.error('エラー:', error);
-
 }
 ```
 
