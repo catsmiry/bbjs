@@ -50,19 +50,12 @@ import  AI  from  '@miry/bbjs';
 async  function  main() {
 const  ai = new  AI('blackboxai'); // モデルを指定
 
-
-try {
-
+try 
 const  userMessage = 'こんにちは、AI！';
-
 const  response = await  ai.sendMessage(conversationId, userMessage);
-
 console.log('AIの応答:', response);
-
 } catch (error) {
-
 console.error('エラー:', error);
-
 }
 
 }
@@ -71,11 +64,7 @@ main();
 
 ```
 
-  
-
 使用するモデル
-
-  
 
 @miry/bbjs では、以下のモデルを使用できます。
 
@@ -84,11 +73,7 @@ main();
 - gemini-pro
 - blackboxai
 
-  
-
 モデルを指定するには、AI クラスのコンストラクタにモデル名を渡します。
-
-  
 
 ## API
 
@@ -97,18 +82,12 @@ AI
 コンストラクタ
 
 ```ts
-
 constructor(model: string = 'blackboxai')
-
 ```
 
 -  `model`: 使用する AI モデルの名前。デフォルトは `blackboxai`。
 
-  
-
 #### メソッド
-
-  
 
 ##### `sendMessage(conversationId: string, content: string): Promise<string>`
 
@@ -128,16 +107,11 @@ constructor(model: string = 'blackboxai')
 
 ## エラーハンドリング
 
-  
-
 `sendMessage` メソッドは、エラーが発生した場合に例外をスローします。エラーハンドリングを行うために、try-catch ブロックを使用してください。
-
-  
 
 ```ts
 
 try {
-
 const  response = await  ai.sendMessage(conversationId, userMessage);
 } catch (error) {
 console.error('エラー:', error);
