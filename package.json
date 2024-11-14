@@ -1,6 +1,6 @@
 {
   "name": "@miry/bbjs",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "type": "module",
   "main": "index.js",
   "types": "./index.d.ts",
@@ -9,6 +9,6 @@
   },
   "keywords": [],
   "author": "Miry",
-  "license": "ISC",
+  "license": "MIT",
   "description": ""
 }
