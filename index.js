@@ -1,7 +1,5 @@
-const axios = require('axios');
-
 // AIクラスの定義
-class AI {
+export default class AI {
   static availableModels = [
     'gpt-4o',
     'claude-sonnet-3.5',
@@ -36,8 +34,12 @@ class AI {
     const payload = this.createPayload(conversationId);
 
     try {
-      const response = await axios.post(this.apiUrl, payload, { headers: this.headers });
-      const cleanedResponse = this.cleanResponse(response.data);
+      const response = await fetch(this.apiUrl, {
+        body: JSON.stringify(payload),
+        headers: this.headers,
+        method: 'POST'
+      }).then(res => res.text())
+      const cleanedResponse = this.cleanResponse(response);
       const assistantMessage = { id: `response-${Date.now()}`, content: cleanedResponse, role: 'assistant' };
       this.conversationHistory[conversationId].push(assistantMessage);
       return assistantMessage.content;
@@ -81,5 +83,3 @@ class AI {
     throw new Error('An error occurred while sending the message.');
   }
 }
-
-module.exports = AI;
